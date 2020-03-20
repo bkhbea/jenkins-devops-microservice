@@ -26,7 +26,7 @@ pipeline {
 
 
 	stages {
-        stage ('Build') {
+        stage ('Checkout') {
             steps {
                 echo "=============================="
 				echo "PATH - $PATH"
@@ -41,18 +41,25 @@ pipeline {
 				echo "========================================"
                 
             }
+		stage ('Compile') {
+			steps {
+				sh "mvn clean compile"
+			}
+		}	
             
         }
         stage ('Test') {
             steps {
-                echo "Test"
+                sh "mvn test"
 				
             }
             
         }
 		stage ('Test Integration') {
             steps {
-                echo "Test Integration"
+                //echo "Test Integration"
+
+				sh "mvn failsafe:integration-test failsafe:verify"
 				
             }
             

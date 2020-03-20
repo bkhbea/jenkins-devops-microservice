@@ -22,7 +22,7 @@ pipeline {
             steps {
                 echo "=============================="
 				//sh 'mvn --version'
-				sh 'node --version'
+				sh 'node1 --version'
 				echo "========================================"
                 
             }
@@ -56,6 +56,9 @@ pipeline {
             
 			echo "I run when I fail"
         }
+		changed {
+			echo "The status of this build is differnet than the last one"
+		}
 
     }
 }

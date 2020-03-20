@@ -48,22 +48,22 @@ pipeline {
 			}
 	            
         }
-        stage ('Test') {
-            steps {
-                sh "mvn test"
+        // stage ('Test') {
+        //     steps {
+        //         sh "mvn test"
 				
-            }
+        //     }
             
-        }
-		stage ('Test Integration') {
-            steps {
-                //echo "Test Integration"
+        // }
+		// stage ('Test Integration') {
+        //     steps {
+        //         //echo "Test Integration"
 
-				sh "mvn failsafe:integration-test failsafe:verify"
+		// 		sh "mvn failsafe:integration-test failsafe:verify"
 				
-            }
+        //     }
             
-        }
+        // }
 		stage ('Package') {
 			steps {
 				sh "mvn package -DskipTests"
@@ -79,8 +79,7 @@ pipeline {
 		}
 		stage  ('Push Docker Image') {
           steps{
-                 
-				 script {
+                 script {
 					 docker.withRegistry('','dockerHub') {
                      dockerImage.push();
 				 }

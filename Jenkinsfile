@@ -26,6 +26,7 @@ pipeline {
 				echo "Build ID - $env.BUILD_ID"
 				echo" Build Tag - $env.JOB_NAME"
 				echo" Build Tag - $env.BUILD_TAG"
+				echo" Build URL - $env.BUILD_URL"
 				//sh 'mvn --version'
 				//sh 'node --version'
 				echo "========================================"

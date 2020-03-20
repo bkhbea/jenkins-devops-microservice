@@ -20,7 +20,7 @@ pipeline {
         stage ('Build') {
             steps {
                 echo "Build 123 =============================="
-				sh 'docker --version'
+				sh 'mvn --version'
 				echo "========================================78654"
                 
             }

@@ -77,16 +77,7 @@ pipeline {
 				 }
 		  }
 		}
-		stage  ('Push Docker Image') {
-          steps{
-
-			  docker.withRegistry('','dockerHub') {
-              dockerImage.push();
-			  }
-			  
-			  
-		  }
-		}
+		
     }
     post {
         always {

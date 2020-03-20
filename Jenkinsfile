@@ -73,7 +73,7 @@ pipeline {
           steps{
                  //docker build -t bkhbea/currency-exchange-devops:$env.BUILD_TAG
 				 script {
-					 dockerImage = docker.build("bkhbea/currency-exchange:${env.BUILD_TAG}")
+					 dockerImage = docker.build("bkhbea/currency-exchange-jenkins:latest")
 				 }
 		  }
 		}
@@ -91,5 +91,24 @@ pipeline {
     
   }
 }
+
+// post {
+//         always {
+            
+// 			echo "I always run - regardless - damn this actually works!!!" 
+//         }
+// 		success {
+            
+// 			echo "I run when successful"
+//         }
+//         failure {
+            
+// 			echo "I run when I fail"
+//         }
+// 		changed {
+// 			echo "The status of this build is differnet than the last one"
+// 		}
+
+//     }
 
 

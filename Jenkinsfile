@@ -88,25 +88,8 @@ pipeline {
 
 		
     }
-    post {
-        always {
-            
-			echo "I always run - regardless - damn this actually works!!!" 
-        }
-		success {
-            
-			echo "I run when successful"
-        }
-        failure {
-            
-			echo "I run when I fail"
-        }
-		changed {
-			echo "The status of this build is differnet than the last one"
-		}
-
-    }
-}
+    
+  }
 }
 
 
